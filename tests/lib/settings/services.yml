@@ -1,10 +1,10 @@
 parameters:
-    ezrichtext.resources: '../../../vendor/ezsystems/ezplatform-richtext/src/lib/eZ/RichText/Resources'
-    ezrichtext.validator.docbook.resources:
-        - '%ezrichtext.resources%/schemas/docbook/ezpublish.rng'
-        - '%ezrichtext.resources%/schemas/docbook/docbook.iso.sch.xsl'
+    ibexa.richtext.resources: '../../../vendor/ibexa/fieldtype-richtext/src/bundle/Resources'
+    ibexa.richtext.validator.docbook.resources:
+        - '%ibexa.richtext.resources%/schemas/docbook/ezpublish.rng'
+        - '%ibexa.richtext.resources%/schemas/docbook/docbook.iso.sch.xsl'
 
 services:
-    ezrichtext.validator.docbook:
-        class: EzSystems\EzPlatformRichText\eZ\RichText\Validator\Validator
-        arguments: ['%ezrichtext.validator.docbook.resources%']
+    ibexa.richtext.validator.docbook:
+        class: Ibexa\FieldTypeRichText\RichText\Validator\Validator
+        arguments: ['%ibexa.richtext.validator.docbook.resources%']

@@ -10,14 +10,14 @@
  */
 namespace eZ\Publish\Core\FieldType\XmlText;
 
-use eZ\Publish\SPI\FieldType\GatewayBasedStorage;
-use eZ\Publish\SPI\Persistence\Content\Field;
-use eZ\Publish\SPI\Persistence\Content\VersionInfo;
+use Ibexa\Contracts\Core\FieldType\GatewayBasedStorage;
+use Ibexa\Contracts\Core\Persistence\Content\Field;
+use Ibexa\Contracts\Core\Persistence\Content\VersionInfo;
 
 class XmlTextStorage extends GatewayBasedStorage
 {
     /**
-     * @see \eZ\Publish\SPI\FieldType\FieldStorage
+     * @see \Ibexa\Contracts\Core\FieldType\FieldStorage
      */
     public function storeFieldData(VersionInfo $versionInfo, Field $field, array $context)
     {
@@ -31,8 +31,8 @@ class XmlTextStorage extends GatewayBasedStorage
     /**
      * Modifies $field if needed, using external data (like for Urls).
      *
-     * @param \eZ\Publish\SPI\Persistence\Content\VersionInfo $versionInfo
-     * @param \eZ\Publish\SPI\Persistence\Content\Field $field
+     * @param \Ibexa\Contracts\Core\Persistence\Content\VersionInfo $versionInfo
+     * @param \Ibexa\Contracts\Core\Persistence\Content\Field $field
      * @param array $context
      */
     public function getFieldData(VersionInfo $versionInfo, Field $field, array $context)

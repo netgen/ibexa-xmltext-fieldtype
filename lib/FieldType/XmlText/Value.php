@@ -11,7 +11,7 @@
 namespace eZ\Publish\Core\FieldType\XmlText;
 
 use DOMDocument;
-use eZ\Publish\Core\FieldType\Value as BaseValue;
+use Ibexa\Core\FieldType\Value as BaseValue;
 
 /**
  * Value for XmlText field type.
@@ -46,7 +46,7 @@ EOT;
     }
 
     /**
-     * @see \eZ\Publish\Core\FieldType\Value
+     * @see \Ibexa\Core\FieldType\Value
      */
     public function __toString()
     {

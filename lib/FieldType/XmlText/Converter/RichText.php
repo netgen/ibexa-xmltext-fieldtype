@@ -11,12 +11,12 @@ use DOMElement;
 use DOMNode;
 use DOMXPath;
 use ErrorException;
-use eZ\Publish\API\Repository\Repository;
-use eZ\Publish\Core\Base\Exceptions\NotFoundException;
+use Ibexa\Contracts\Core\Repository\Repository;
+use Ibexa\Core\Base\Exceptions\NotFoundException;
 use eZ\Publish\Core\FieldType\XmlText\Converter;
-use EzSystems\EzPlatformRichText\eZ\RichText\Converter\Aggregate;
-use EzSystems\EzPlatformRichText\eZ\RichText\Converter\Xslt;
-use EzSystems\EzPlatformRichText\eZ\RichText\Validator\Validator;
+use Ibexa\FieldTypeRichText\RichText\Converter\Aggregate;
+use Ibexa\FieldTypeRichText\RichText\Converter\Xslt;
+use Ibexa\FieldTypeRichText\RichText\Validator\Validator;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 use Psr\Log\NullLogger;
@@ -26,7 +26,7 @@ class RichText implements Converter
     const INLINE_CUSTOM_TAG = 'inline';
     const BLOCK_CUSTOM_TAG = 'block';
     /**
-     * @var \EzSystems\EzPlatformRichText\eZ\RichText\Converter
+     * @var \Ibexa\Contracts\FieldTypeRichText\RichText\Converter
      */
     private $converter;
 
@@ -35,11 +35,11 @@ class RichText implements Converter
      */
     private $imageContentTypes;
     /**
-     * @var \EzSystems\EzPlatformRichText\eZ\RichText\ValidatorInterface
+     * @var \Ibexa\Contracts\FieldTypeRichText\RichText\ValidatorInterface
      */
     private $validator;
     /**
-     * @var \eZ\Publish\API\Repository\Repository
+     * @var \Ibexa\Contracts\Core\Repository\Repository
      */
     private $apiRepository;
 
@@ -196,7 +196,7 @@ class RichText implements Converter
          */
         $nodes = $xpath->query("//*[
             (
-                not(starts-with(translate(substring(@xml:id, 1, 1), '$whitelist1st', '$replaceStr1st'), 'a')) 
+                not(starts-with(translate(substring(@xml:id, 1, 1), '$whitelist1st', '$replaceStr1st'), 'a'))
                 or string-length(translate(substring(@xml:id, 2), '$whitelist', '$replaceStr')) > 0
             ) and string-length(@xml:id) > 0]");
 

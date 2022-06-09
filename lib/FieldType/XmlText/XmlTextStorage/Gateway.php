@@ -10,10 +10,10 @@
  */
 namespace eZ\Publish\Core\FieldType\XmlText\XmlTextStorage;
 
-use eZ\Publish\Core\FieldType\Url\UrlStorage\Gateway as UrlGateway;
-use eZ\Publish\SPI\FieldType\StorageGateway;
-use eZ\Publish\SPI\Persistence\Content\Field;
-use eZ\Publish\SPI\Persistence\Content\VersionInfo;
+use Ibexa\Core\FieldType\Url\UrlStorage\Gateway as UrlGateway;
+use Ibexa\Contracts\Core\FieldType\StorageGateway;
+use Ibexa\Contracts\Core\Persistence\Content\Field;
+use Ibexa\Contracts\Core\Persistence\Content\VersionInfo;
 
 /**
  * Abstract gateway class for XmlText type.
@@ -22,7 +22,7 @@ use eZ\Publish\SPI\Persistence\Content\VersionInfo;
 abstract class Gateway extends StorageGateway
 {
     /**
-     * @var \eZ\Publish\Core\FieldType\Url\UrlStorage\Gateway
+     * @var \Ibexa\Core\FieldType\Url\UrlStorage\Gateway
      */
     protected $urlGateway;
 
@@ -34,15 +34,15 @@ abstract class Gateway extends StorageGateway
     /**
      * Populates $field->value->externalData with external data.
      *
-     * @param \eZ\Publish\SPI\Persistence\Content\Field $field
+     * @param \Ibexa\Contracts\Core\Persistence\Content\Field $field
      */
     abstract public function getFieldData(Field $field);
 
     /**
      * Stores data, external to XMLText type.
      *
-     * @param \eZ\Publish\SPI\Persistence\Content\VersionInfo $versionInfo
-     * @param \eZ\Publish\SPI\Persistence\Content\Field $field
+     * @param \Ibexa\Contracts\Core\Persistence\Content\VersionInfo $versionInfo
+     * @param \Ibexa\Contracts\Core\Persistence\Content\Field $field
      *
      * @return bool
      */

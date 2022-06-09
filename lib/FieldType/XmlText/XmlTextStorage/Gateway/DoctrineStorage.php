@@ -9,11 +9,11 @@ namespace eZ\Publish\Core\FieldType\XmlText\XmlTextStorage\Gateway;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\FetchMode;
 use DOMDocument;
-use eZ\Publish\Core\Base\Exceptions\NotFoundException;
-use eZ\Publish\Core\FieldType\Url\UrlStorage\Gateway as UrlGateway;
+use Ibexa\Core\Base\Exceptions\NotFoundException;
+use Ibexa\Core\FieldType\Url\UrlStorage\Gateway as UrlGateway;
 use eZ\Publish\Core\FieldType\XmlText\XmlTextStorage\Gateway;
-use eZ\Publish\SPI\Persistence\Content\Field;
-use eZ\Publish\SPI\Persistence\Content\VersionInfo;
+use Ibexa\Contracts\Core\Persistence\Content\Field;
+use Ibexa\Contracts\Core\Persistence\Content\VersionInfo;
 
 class DoctrineStorage extends Gateway
 {
@@ -32,7 +32,7 @@ class DoctrineStorage extends Gateway
     /**
      * Populates $field->value with external data.
      *
-     * @param \eZ\Publish\SPI\Persistence\Content\Field $field
+     * @param \Ibexa\Contracts\Core\Persistence\Content\Field $field
      */
     public function getFieldData(Field $field)
     {
@@ -79,8 +79,8 @@ class DoctrineStorage extends Gateway
     /**
      * Stores data, external to XMLText type.
      *
-     * @param \eZ\Publish\SPI\Persistence\Content\VersionInfo $versionInfo
-     * @param \eZ\Publish\SPI\Persistence\Content\Field $field
+     * @param \Ibexa\Contracts\Core\Persistence\Content\VersionInfo $versionInfo
+     * @param \Ibexa\Contracts\Core\Persistence\Content\Field $field
      *
      * @return bool
      */

@@ -9,10 +9,10 @@ namespace eZ\Publish\Core\FieldType\XmlText;
 
 use DOMDocument;
 use DOMXPath;
-use eZ\Publish\API\Repository\Exceptions\NotFoundException;
-use eZ\Publish\Core\Base\Exceptions\InvalidArgumentException;
-use eZ\Publish\SPI\Persistence\Content\Handler as ContentHandler;
-use eZ\Publish\SPI\Persistence\Content\Location\Handler as LocationHandler;
+use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException;
+use Ibexa\Core\Base\Exceptions\InvalidArgumentException;
+use Ibexa\Contracts\Core\Persistence\Content\Handler as ContentHandler;
+use Ibexa\Contracts\Core\Persistence\Content\Location\Handler as LocationHandler;
 
 /**
  * Validator for XmlText internal format links.
@@ -20,19 +20,19 @@ use eZ\Publish\SPI\Persistence\Content\Location\Handler as LocationHandler;
 class InternalLinkValidator
 {
     /**
-     * @var \eZ\Publish\SPI\Persistence\Content\Handler
+     * @var \Ibexa\Contracts\Core\Persistence\Content\Handler
      */
     private $contentHandler;
 
     /**
-     * @var \eZ\Publish\SPI\Persistence\Content\Location\Handler;
+     * @var \Ibexa\Contracts\Core\Persistence\Content\Location\Handler;
      */
     private $locationHandler;
 
     /**
      * InternalLinkValidator constructor.
-     * @param \eZ\Publish\SPI\Persistence\Content\Handler $contentHandler
-     * @param \eZ\Publish\SPI\Persistence\Content\Location\Handler $locationHandler
+     * @param \Ibexa\Contracts\Core\Persistence\Content\Handler $contentHandler
+     * @param \Ibexa\Contracts\Core\Persistence\Content\Location\Handler $locationHandler
      */
     public function __construct(ContentHandler $contentHandler, LocationHandler $locationHandler)
     {
@@ -105,7 +105,7 @@ class InternalLinkValidator
     /**
      * Builds error message for invalid url.
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException If given $scheme is not supported.
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException If given $scheme is not supported.
      *
      * @param string $scheme
      * @param string $target

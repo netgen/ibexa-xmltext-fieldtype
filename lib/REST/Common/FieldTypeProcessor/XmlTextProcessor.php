@@ -11,7 +11,7 @@
 namespace eZ\Publish\Core\REST\Common\FieldTypeProcessor;
 
 use eZ\Publish\Core\FieldType\XmlText\Type;
-use EzSystems\EzPlatformRest\FieldTypeProcessor;
+use Ibexa\Contracts\Rest\FieldTypeProcessor;
 
 class XmlTextProcessor extends FieldTypeProcessor
 {

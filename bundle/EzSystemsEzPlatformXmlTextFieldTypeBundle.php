@@ -24,10 +24,10 @@ class EzSystemsEzPlatformXmlTextFieldTypeBundle extends Bundle
         $container->addCompilerPass(new XmlTextConverterPass());
 
         /**
-         * @var \eZ\Bundle\EzPublishCoreBundle\DependencyInjection\EzPublishCoreExtension
+         * @var \Ibexa\Bundle\Core\DependencyInjection\IbexaCoreExtension
          */
-        $eZExtension = $container->getExtension('ezpublish');
-        $eZExtension->addConfigParser(new ConfigParser\FieldType\XmlText());
-        $eZExtension->addDefaultSettings(__DIR__ . '/Resources/config', ['default_settings.yml']);
+        $coreExtension = $container->getExtension('ibexa');
+        $coreExtension->addConfigParser(new ConfigParser\FieldType\XmlText());
+        $coreExtension->addDefaultSettings(__DIR__ . '/Resources/config', ['default_settings.yml']);
     }
 }

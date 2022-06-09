@@ -11,7 +11,7 @@
 namespace EzSystems\EzPlatformXmlTextFieldTypeBundle\Converter;
 
 use eZ\Publish\Core\FieldType\XmlText\Converter\Html5 as BaseHtml5Converter;
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
+use Ibexa\Contracts\Core\SiteAccess\ConfigResolverInterface;
 
 /**
  * Adds ConfigResolver awareness to the original Html5 converter.

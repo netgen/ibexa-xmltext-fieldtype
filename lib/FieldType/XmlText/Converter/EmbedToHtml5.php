@@ -12,10 +12,10 @@ namespace eZ\Publish\Core\FieldType\XmlText\Converter;
 
 use DOMDocument;
 use DOMElement;
-use eZ\Publish\API\Repository\Exceptions\NotFoundException as APINotFoundException;
-use eZ\Publish\API\Repository\Repository;
-use eZ\Publish\API\Repository\Values\Content\VersionInfo as APIVersionInfo;
-use eZ\Publish\Core\Base\Exceptions\UnauthorizedException;
+use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException as APINotFoundException;
+use Ibexa\Contracts\Core\Repository\Repository;
+use Ibexa\Contracts\Core\Repository\Values\Content\VersionInfo;
+use Ibexa\Core\Base\Exceptions\UnauthorizedException;
 use eZ\Publish\Core\FieldType\XmlText\Converter;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpKernel\Controller\ControllerReference;
@@ -60,7 +60,7 @@ class EmbedToHtml5 implements Converter
     protected $fragmentHandler;
 
     /**
-     * @var \eZ\Publish\API\Repository\Repository
+     * @var \Ibexa\Contracts\Core\Repository\Repository
      */
     protected $repository;
 
@@ -100,7 +100,7 @@ class EmbedToHtml5 implements Converter
 
             if ($contentId = $embed->getAttribute('object_id')) {
                 try {
-                    /** @var \eZ\Publish\API\Repository\Values\Content\Content $content */
+                    /** @var \Ibexa\Contracts\Core\Repository\Values\Content\Content $content */
                     $content = $this->repository->sudo(
                         static function (Repository $repository) use ($contentId) {
                             return $repository->getContentService()->loadContent($contentId);
@@ -116,7 +116,7 @@ class EmbedToHtml5 implements Converter
 
                     // Check published status of the Content
                     if (
-                        $content->getVersionInfo()->status !== APIVersionInfo::STATUS_PUBLISHED
+                        $content->getVersionInfo()->status !== VersionInfo::STATUS_PUBLISHED
                         && !$this->repository->getPermissionResolver()->canUser('content', 'versionread', $content)
                     ) {
                         throw new UnauthorizedException('content', 'versionread', ['contentId' => $contentId]);
@@ -143,7 +143,7 @@ class EmbedToHtml5 implements Converter
                 }
             } elseif ($locationId = $embed->getAttribute('node_id')) {
                 try {
-                    /** @var \eZ\Publish\API\Repository\Values\Content\Location $location */
+                    /** @var \Ibexa\Contracts\Core\Repository\Values\Content\Location $location */
                     $location = $this->repository->sudo(
                         static function (Repository $repository) use ($locationId) {
                             return $repository->getLocationService()->loadLocation($locationId);

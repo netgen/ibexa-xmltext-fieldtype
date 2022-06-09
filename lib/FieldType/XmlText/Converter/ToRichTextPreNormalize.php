@@ -9,7 +9,7 @@
 namespace eZ\Publish\Core\FieldType\XmlText\Converter;
 
 use DOMDocument;
-use EzSystems\EzPlatformRichText\eZ\RichText\Converter;
+use Ibexa\Contracts\FieldTypeRichText\RichText\Converter;
 
 /**
  * Expands paragraphs and links embeds of a XML document in legacy ezxml format.

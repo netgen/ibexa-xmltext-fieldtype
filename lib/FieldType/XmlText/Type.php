@@ -11,15 +11,15 @@
 namespace eZ\Publish\Core\FieldType\XmlText;
 
 use DOMDocument;
-use eZ\Publish\API\Repository\Values\Content\Relation;
-use eZ\Publish\API\Repository\Values\ContentType\FieldDefinition;
-use eZ\Publish\Core\Base\Exceptions\InvalidArgumentType;
-use eZ\Publish\Core\FieldType\FieldType;
-use eZ\Publish\Core\FieldType\ValidationError;
-use eZ\Publish\Core\FieldType\Value as BaseValue;
+use Ibexa\Contracts\Core\Repository\Values\Content\Relation;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinition;
+use Ibexa\Core\Base\Exceptions\InvalidArgumentType;
+use Ibexa\Core\FieldType\FieldType;
+use Ibexa\Core\FieldType\ValidationError;
+use Ibexa\Core\FieldType\Value as BaseValue;
 use eZ\Publish\Core\FieldType\XmlText\Input\EzXml;
-use eZ\Publish\SPI\FieldType\Value as SPIValue;
-use eZ\Publish\SPI\Persistence\Content\FieldValue;
+use Ibexa\Contracts\Core\FieldType\Value as SPIValue;
+use Ibexa\Contracts\Core\Persistence\Content\FieldValue;
 use RuntimeException;
 
 /**
@@ -159,7 +159,7 @@ class Type extends FieldType
     /**
      * Throws an exception if value structure is not of expected format.
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException If the value does not match the expected structure.
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException If the value does not match the expected structure.
      *
      * @param \eZ\Publish\Core\FieldType\XmlText\Value $value
      */
@@ -173,7 +173,7 @@ class Type extends FieldType
     /**
      * Returns sortKey information.
      *
-     * @see \eZ\Publish\Core\FieldType
+     * @see \Ibexa\Core\FieldType
      *
      * @param \eZ\Publish\Core\FieldType\XmlText\Value $value
      *
@@ -218,7 +218,7 @@ class Type extends FieldType
      * Creates a new Value object from persistence data.
      * $fieldValue->data is supposed to be a string.
      *
-     * @param \eZ\Publish\SPI\Persistence\Content\FieldValue $fieldValue
+     * @param \Ibexa\Contracts\Core\Persistence\Content\FieldValue $fieldValue
      *
      * @return \eZ\Publish\Core\FieldType\XmlText\Value
      */
@@ -230,7 +230,7 @@ class Type extends FieldType
     /**
      * @param \eZ\Publish\Core\FieldType\XmlText\Value $value
      *
-     * @return \eZ\Publish\SPI\Persistence\Content\FieldValue
+     * @return \Ibexa\Contracts\Core\Persistence\Content\FieldValue
      */
     public function toPersistenceValue(SPIValue $value)
     {
@@ -256,12 +256,12 @@ class Type extends FieldType
     /**
      * Validates a field.
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
      *
-     * @param \eZ\Publish\API\Repository\Values\ContentType\FieldDefinition $fieldDefinition The field definition of the field
+     * @param \Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinition $fieldDefinition The field definition of the field
      * @param \eZ\Publish\Core\FieldType\XmlText\Value $value The field value for which an action is performed
      *
-     * @return \eZ\Publish\SPI\FieldType\ValidationError[]
+     * @return \Ibexa\Contracts\Core\FieldType\ValidationError[]
      */
     public function validate(FieldDefinition $fieldDefinition, SPIValue $value)
     {
@@ -282,7 +282,7 @@ class Type extends FieldType
      *
      * @param mixed $fieldSettings
      *
-     * @return \eZ\Publish\SPI\FieldType\ValidationError[]
+     * @return \Ibexa\Contracts\Core\FieldType\ValidationError[]
      */
     public function validateFieldSettings($fieldSettings)
     {
@@ -338,7 +338,7 @@ class Type extends FieldType
     /**
      * Returns relation data extracted from value.
      *
-     * Not intended for \eZ\Publish\API\Repository\Values\Content\Relation::COMMON type relations,
+     * Not intended for \Ibexa\Contracts\Core\Repository\Values\Content\Relation::COMMON type relations,
      * there is a service API for handling those.
      *
      * @param \eZ\Publish\Core\FieldType\XmlText\Value $fieldValue
@@ -348,15 +348,15 @@ class Type extends FieldType
      * Example:
      * <code>
      *  array(
-     *      \eZ\Publish\API\Repository\Values\Content\Relation::LINK => array(
+     *      \Ibexa\Contracts\Core\Repository\Values\Content\Relation::LINK => array(
      *          "contentIds" => array( 12, 13, 14 ),
      *          "locationIds" => array( 24 )
      *      ),
-     *      \eZ\Publish\API\Repository\Values\Content\Relation::EMBED => array(
+     *      \Ibexa\Contracts\Core\Repository\Values\Content\Relation::EMBED => array(
      *          "contentIds" => array( 12 ),
      *          "locationIds" => array( 24, 45 )
      *      ),
-     *      \eZ\Publish\API\Repository\Values\Content\Relation::ATTRIBUTE => array( 12 )
+     *      \Ibexa\Contracts\Core\Repository\Values\Content\Relation::ATTRIBUTE => array( 12 )
      *  )
      * </code>
      */

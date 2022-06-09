@@ -11,9 +11,9 @@
 namespace eZ\Publish\Core\FieldType\XmlText\Converter;
 
 use DOMDocument;
-use eZ\Publish\Core\Base\Exceptions\InvalidArgumentType;
+use Ibexa\Core\Base\Exceptions\InvalidArgumentType;
 use eZ\Publish\Core\FieldType\XmlText\Converter;
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
+use Ibexa\Contracts\Core\SiteAccess\ConfigResolverInterface;
 use RuntimeException;
 use XSLTProcessor;
 
@@ -30,7 +30,7 @@ class Html5 implements Converter
     protected $stylesheet;
 
     /**
-     * @var \eZ\Publish\Core\MVC\ConfigResolverInterface
+     * @var \Ibexa\Contracts\Core\SiteAccess\ConfigResolverInterface
      */
     protected $configResolver;
 
@@ -57,11 +57,11 @@ class Html5 implements Converter
      * Constructor.
      *
      * @param string $stylesheet Stylesheet to use for conversion
-     * @param \eZ\Publish\Core\MVC\ConfigResolverInterface $configResolver
+     * @param \Ibexa\Contracts\Core\SiteAccess\ConfigResolverInterface $configResolver
      * @param array $customStylesheets Array of XSL stylesheets. Each entry consists in a hash having "path" and "priority" keys.
      * @param \eZ\Publish\Core\FieldType\XmlText\Converter[] $preConverters Array of pre-converters
      *
-     * @throws \eZ\Publish\Core\Base\Exceptions\InvalidArgumentType
+     * @throws \Ibexa\Core\Base\Exceptions\InvalidArgumentType
      */
     public function __construct($stylesheet, ConfigResolverInterface $configResolver, array $customStylesheets = [], array $preConverters = [])
     {

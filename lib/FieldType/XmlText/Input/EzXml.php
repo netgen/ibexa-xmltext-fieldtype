@@ -11,7 +11,7 @@
 namespace eZ\Publish\Core\FieldType\XmlText\Input;
 
 use DOMDocument;
-use eZ\Publish\Core\Base\Exceptions\InvalidArgumentException;
+use Ibexa\Core\Base\Exceptions\InvalidArgumentException;
 use eZ\Publish\Core\FieldType\XmlText\Input;
 
 class EzXml extends Input
@@ -22,7 +22,7 @@ class EzXml extends Input
      * @param string $xmlString The eZ XML content
      * @param string $schemaPath Path to XSD file
      *
-     * @throws \eZ\Publish\Core\Base\Exceptions\InvalidArgumentException if content does not validate
+     * @throws \Ibexa\Core\Base\Exceptions\InvalidArgumentException if content does not validate
      */
     public function __construct($xmlString, $schemaPath = null)
     {
