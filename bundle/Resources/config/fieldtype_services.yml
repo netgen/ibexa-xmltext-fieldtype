@@ -1,5 +1,5 @@
 parameters:
-    ezpublish.fieldType.ezxmltext.converter.html5.resources: "%kernel.project_dir%/vendor/ezsystems/ezplatform-xmltext-fieldtype/lib/FieldType/XmlText/Input/Resources/stylesheets/eZXml2Html5.xsl"
+    ezpublish.fieldType.ezxmltext.converter.html5.resources: "%kernel.project_dir%/vendor/netgen/ibexa-xmltext-fieldtype/lib/FieldType/XmlText/Input/Resources/stylesheets/eZXml2Html5.xsl"
     ezpublish.fieldType.ezxmlText.converter.embedToHtml5.excludedAttributes: [view, node_id, object_id]
 
 services:
