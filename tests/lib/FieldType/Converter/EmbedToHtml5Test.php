@@ -726,7 +726,7 @@ ezlegacytmp-embed-link-node_id="222"
             ->method('render')
             ->with(
                 new ControllerReference(
-                    'ez_content:embedAction',
+                    'ibexa_content:embedAction',
                     [
                         'contentId' => $contentId,
                         'viewType' => $view,
@@ -789,7 +789,7 @@ ezlegacytmp-embed-link-node_id="222"
             ->method('render')
             ->with(
                 new ControllerReference(
-                    'ez_content:embedAction',
+                    'ibexa_content:embedAction',
                     [
                         'contentId' => $location->getContentInfo()->id,
                         'locationId' => $location->id,

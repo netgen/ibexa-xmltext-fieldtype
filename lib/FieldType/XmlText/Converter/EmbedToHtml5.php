@@ -124,7 +124,7 @@ class EmbedToHtml5 implements Converter
 
                     $embedContent = $this->fragmentHandler->render(
                         new ControllerReference(
-                            'ez_content:embedAction',
+                            'ibexa_content:embedAction',
                             [
                                 'contentId' => $contentId,
                                 'viewType' => $view,
@@ -159,7 +159,7 @@ class EmbedToHtml5 implements Converter
 
                     $embedContent = $this->fragmentHandler->render(
                         new ControllerReference(
-                            'ez_content:embedAction',
+                            'ibexa_content:embedAction',
                             [
                                 'contentId' => $location->getContentInfo()->id,
                                 'locationId' => $location->id,
