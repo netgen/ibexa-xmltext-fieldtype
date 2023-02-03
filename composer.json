@@ -17,15 +17,15 @@
         "php": "^7.4 || ^8.1",
         "ext-xsl": "*",
         "ext-dom": "*",
-        "ibexa/core": "^4.1",
-        "ibexa/content-forms": "^4.1",
-        "ibexa/fieldtype-richtext": "^4.1",
-        "ibexa/rest": "^4.1"
+        "ibexa/core": "^4.4",
+        "ibexa/content-forms": "^4.4",
+        "ibexa/fieldtype-richtext": "^4.4",
+        "ibexa/rest": "^4.4"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.0",
         "matthiasnoback/symfony-dependency-injection-test": "^4.0",
-        "ibexa/solr": "^4.1",
+        "ibexa/solr": "^4.4",
         "friendsofphp/php-cs-fixer": "v2.16.1"
     },
     "autoload": {
